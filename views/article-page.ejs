@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>steps page</title>
+</head>
+<body>
+    <%- include('./partial/header.ejs') %>
+    <h1 class="bg-dark text-white p-1 text-capitalize">welcome <%= user.fullName %> </h1>
+    <div class="container text-capitalize my-5">
+        <p class="fw-bold text-decoration-underline text-center fs-5">welcome to ways of creating application software guideline</p>
+        <p class="lead">Software Development Life Cycle (SDLC) is a process used by the software industry to design, develop and test high
+        quality softwares. The SDLC aims to produce a high-quality software that meets or exceeds customer expectations, reaches
+        completion within times and cost estimates.</p>
+    <% articles.forEach(article => { %>
+        <div class="card my-3">
+            <div class="card-header">
+                <h1><%= article.title %> </h1>
+            </div>
+            <div class="card-body">
+                <p><%= article.articleBody.slice(0,200) %>  ... </p>
+                <a href="/article-detail/<%= article.id %> " class="btn btn-outline-secondary text-capitalize">read more</a>
+            </div>
+        </div>  
+  <%  }) %> 
+</div>
+</body>
+</html>
+
