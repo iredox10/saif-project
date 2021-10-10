@@ -16,5 +16,5 @@ app.use(routes);
 // connect to mongo database
 mongoose
 	.connect(process.env.DBS_URL)
-	.then((result) => app.listen(4000))
+	.then((result) => app.listen(process.env.PORT || 4000))
 	.catch((err) => console.log(err));
