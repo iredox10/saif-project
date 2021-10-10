@@ -5,7 +5,7 @@ const ejs = require('ejs');
 const mongoose = require('mongoose');
 const routes = require('./routes/routes');
 const methodOverride = require('method-override');
-
+require('dotenv').config()
 // middlewares
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
@@ -15,6 +15,6 @@ app.use(routes);
 
 // connect to mongo database
 mongoose
-	.connect('mongodb://localhost/saif-project')
+	.connect(process.env.DBS_URL)
 	.then((result) => app.listen(4000))
 	.catch((err) => console.log(err));
