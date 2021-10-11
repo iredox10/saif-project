@@ -15,6 +15,6 @@ app.use(routes);
 
 // connect to mongo database
 mongoose
-	.connect(process.env.DBS_URL)
+	.connect(process.env.DBS_URL || 'mongodb://localhost/saif-project')
 	.then((result) => app.listen(process.env.PORT || 4000))
 	.catch((err) => console.log(err));
