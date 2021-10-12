@@ -15,7 +15,7 @@ app.use(routes);
 
 // connect to mongo database
 mongoose
-	.connect(process.env.DBS_URL || 'mongodb://localhost/saif-project', {
+	.connect(process.env.DBS_URL, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})
