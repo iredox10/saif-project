@@ -18,7 +18,7 @@ app.use(routes);
 
 // connect to mongo database
 mongoose
-	.connect(process.env.LOCAL_URL, {
+	.connect(process.env.LOCAL_URL||process.env.DBS_URL , {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})
