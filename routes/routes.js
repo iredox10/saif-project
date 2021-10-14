@@ -1,12 +1,13 @@
 const express = require('express');
-const controller = require('../controller/controller');
 const route = express.Router();
+const controller = require('../controller/controller');
+const authUser = require('../middleware/userMiddleware')
 
 route.get('/', controller.get_home);
 
 route.get('/register', controller.get_register);
 
-route.post('/log-in', controller.post_log_in);
+route.post('/log-in',controller.post_log_in);
 
 route.get('/log-in', controller.get_log_in);
 

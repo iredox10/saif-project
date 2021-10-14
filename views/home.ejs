@@ -6,15 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <title>home page</title>
+
+    <style>
+        body{
+            background-image:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6),rgba(0,0,0,.6)),url('../img/img.jpg');
+            background-position: center;
+            background-size: cover;
+            /* background-repeat: no-repeat; */
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
     <%- include('./partial/header.ejs') %> 
-    <div class="text text-center text-lg-start p-2 text-capitalize my-3">
-    <h1>welcome to innovation and vocation enterprise institute</h1>
-    <p class="lead">this is a project about the process of creating a software </p>
+    <div class="text text-center text-lg-start p-2 text-capitalize my-3 vh-100">
+    <h1 class="text-white">welcome to innovation and vocation enterprise institute</h1>
+    <p class="lead text-white">this is a project about the process of creating a software </p>
     <div class="btn text-capitalize">
         <a href="/register" class="btn btn-dark ">register</a>
-        <a href="/log-in" class="btn btn-outline-dark">log in</a>
+        <a href="/log-in" class="btn btn-outline-light">log in</a>
     </div>
     </div>
 

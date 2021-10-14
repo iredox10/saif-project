@@ -1,5 +1,14 @@
+const jwt = require('jsonwebtoken')
 const User = require('../model/registerModel');
 const Article = require('../model/article');
+
+
+const createToken =(id) =>{
+	return  jwt.sign({id}, 'register secret',
+	 {expiresIn: '2d'})
+}
+
+
 module.exports.get_home = (req, res) => {
 	res.render('home');
 };
@@ -14,7 +23,12 @@ module.exports.post_log_in = async (req, res) => {
 		let userEmail = await User.findOne({email:req.body.email})
 		let userPwd = await User.findOne({password:req.body.password})
 		let articles = await Article.find()
-		if(userEmail && userPwd) res.render('article-page', {user:userEmail, articles})
+		if(userEmail && userPwd){
+		const jwt = createToken(userEmail.id)	
+		res.cookie('token',jwt, {httpOnly:true, maxAge:10000} )
+		res.render('article-page', {user:userEmail, articles})
+		 }
+
 		else{ 
 			res.send('username or password')
 		}

@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <title>edit article</title>
 </head>
 
 <body>
     <%- include('./partial/header.ejs') %>
-        <div class="container">
-            <h1>edit article</h1>
+        <div class="container my-3">
+            <h1 class="text-capitalize">edit article</h1>
             <form action="/edit-article/<%= article.id %>?_method=PUT" method="POST">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
