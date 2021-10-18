@@ -1,11 +1,24 @@
 const mongoose = require('mongoose');
 
 const registrationSchema = new mongoose.Schema({
-    fullName : {
+    firstName : {
         type: String,
         require: true
     },
+    surName : {
+        type: String,
+        require: true
+    },
+    lastName : {
+        type: String,
+        require: true
+    },
+
     schoolName : {
+        type: String,
+        require: true
+    },
+    department : {
         type: String,
         require: true
     },

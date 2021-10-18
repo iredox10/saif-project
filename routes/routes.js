@@ -3,7 +3,10 @@ const route = express.Router();
 const controller = require('../controller/controller');
 const authUser = require('../middleware/userMiddleware')
 
+route.get('/about-us', controller.get_about)
+
 route.get('/', controller.get_home);
+
 
 route.get('/register', controller.get_register);
 
@@ -28,5 +31,6 @@ route.get('/admin-article-page', controller.get_admin_article);
 route.get('/article/edit/:id', controller.get_edit_article)
 
 route.put('/edit-article/:id', controller.edit_article)
+
 
 module.exports = route;

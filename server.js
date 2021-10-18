@@ -22,5 +22,5 @@ mongoose
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})
-	.then((result) => app.listen(process.env.PORT || 4000))
+	.then((result) => app.listen(process.env.PORT || 5000))
 	.catch((err) => console.log(err));

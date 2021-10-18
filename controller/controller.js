@@ -51,9 +51,11 @@ module.exports.article = async (req, res) => {
 module.exports.post_register = async (req, res) => {
 	try {
 		const user = new User({
-			fullName: req.body.fullName,
-			schoolName: req.body.schoolName,
+			firstName: req.body.firstName,
+			lastName: req.body.lastName,
+			surName: req.body.surName,
 			address: req.body.address,
+			department: req.body.department,
 			regNumber: req.body.regNumber,
 			email: req.body.email,
 			password: req.body.password,
@@ -159,4 +161,8 @@ module.exports.edit_article = async (req,res) =>{
 	} catch (err) {
 		
 	}
+}
+
+exports.get_about = (req,res) =>{
+	res.render('about')
 }

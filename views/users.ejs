@@ -13,7 +13,9 @@
     <% users.forEach(user =>  { %>
         <table class="table table-bordered">
             <tr>
-                <th class="bg-dark text-capitalize text-white">full name</th>
+                <th class="bg-dark text-capitalize text-white">first name</th>
+                <th class="bg-dark text-capitalize text-white">surname</th>
+                <th class="bg-dark text-capitalize text-white">last name</th>
                 <th class="bg-dark text-capitalize text-white">school name</th>
                 <th class="bg-dark text-capitalize text-white">address</th>
                 <th class="bg-dark text-capitalize text-white">reg. number</th>
@@ -22,7 +24,9 @@
             </tr>
 
             <tr>
-                <td><%= user.fullName %> </td>
+                <td><%= user.firstName %> </td>
+                <td><%= user.surname %> </td>
+                <td><%= user.lastName %> </td>
                 <td><%= user.schoolName %> </td>
                 <td><%= user.address %> </td>
                 <td><%= user.regNumber %> </td>
